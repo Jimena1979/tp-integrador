@@ -7,7 +7,7 @@ export default defineConfig({
       // Esto permite que uses '@/' para referirte a la carpeta 'src'
       '@': path.resolve(__dirname, './src'),
     },
-  },
+  },  
   build: {
     rollupOptions: {
       input: {
@@ -15,7 +15,8 @@ export default defineConfig({
         login: 'src/pages/auth/login/login.html',
         registro: 'src/pages/auth/registro/registro.html', 
         admin: 'src/pages/admin/home/home.html', 
-        client: 'src/pages/client/home/home.html', 
+        client: 'src/pages/store/home/home.html', 
+        carrito: 'src/pages/store/cart/cart.html', 
       },
     },
   },

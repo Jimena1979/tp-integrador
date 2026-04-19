@@ -155,9 +155,20 @@ const cargarProductos = (productosAMostrar: Product[] = PRODUCTS): void => {
     
     // 2. Actualizamos la interfaz (esto se encarga de todo)
     actualizarContador(); 
+
+// 1. Buscamos el elemento
+    const feedback = document.getElementById('feedback-msg');
     
-    // 3. Feedback visual
-    alert(`¡${prod.nombre} añadido al carrito!`);
+    if (feedback) {
+        // 2. Le ponemos el texto
+        feedback.textContent = `¡${prod.nombre} añadido al carrito!`;
+        
+        // 3. Lo borramos a los 2 segundos para que no quede ahí siempre
+        setTimeout(() => {
+            feedback.textContent = '';
+        }, 1500);
+    }
+
 });
     });
 };
