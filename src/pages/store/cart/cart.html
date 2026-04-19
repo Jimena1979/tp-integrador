@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Carrito | Food Store</title>
+    
+    <link rel="stylesheet" href="/src/pages/store/css/styles.css">
+    <link rel="stylesheet" href="/src/pages/store/css/cart.css">
+    
+    <script type="module" src="./cart.ts"></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a class="logo">Food Store</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/src/pages/store/home/home.html">Catálogo</a></li>
+                    <li><a href="cart.html">Carrito <span class="cart-badge" id="cart-count">0</span></a></li>
+                    <li><span>Juan Pérez</span></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="app-layout">
+        <main class="main-content">
+            <h1>Mi Carrito</h1>
+            
+            <div class="cart-page-container">
+                <div id="cart-items-list" class="cart-items">
+                    <p>Cargando carrito...</p>
+                </div>
+
+                <div class="cart-summary">
+                    <h3>Resumen del Pedido</h3>
+                    <div class="summary-row">
+                        <span>Subtotal:</span> 
+                        <span id="subtotal-display">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Envío:</span> 
+                        <span>$500.00</span>
+                    </div>
+                    <hr>
+                    <div class="summary-row total">
+                        <span>Total:</span> 
+                        <span id="total-display">$0.00</span>
+                    </div>
+                    
+                    <button class="btn-primary">Proceder al Pago</button>
+                    <button class="btn-secondary" id="btn-clear-cart">Vaciar Carrito</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
