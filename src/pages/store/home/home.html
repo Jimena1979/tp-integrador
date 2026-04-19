@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store - Home</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <h1 class="logo">🍕 Food Store</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Mis Pedidos</a></li>
+                    <li>
+                        <a href="/cart.html" id="nav-cart">
+                            🛒 Carrito <span id="cart-count" class="cart-badge">0</span>
+                        </a>
+                    </li>
+                    <li class="user-name">Juan Pérez</li>
+                    <li><button id="logoutButton" class="btn-logout">Cerrar Sesión</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="sidebar-fixed-content">
+                <h2>Categorías</h2>
+                <nav class="categories-nav">
+                    <ul id="lista-categorias"></ul>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="top-search-bar">
+    <div class="search-container">
+        <input type="search" id="busqueda" placeholder="🔍 Buscar productos...">
+        
+        <div class="filter-controls">
+            <label>Ordenar por</label>
+            <select id="sort-price"><option>Precio</option></select>
+            <select id="filter-all"><option>Todos</option></select>
+        </div>
+    </div>
+</section>
+            
+            <section class="products-display">
+                <div id="contenedor-productos" class="catalogo"></div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="./home.ts"></script>
+</body>
+</html>

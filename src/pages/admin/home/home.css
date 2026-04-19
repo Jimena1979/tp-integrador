@@ -1,0 +1,111 @@
+:root {
+  --primary: #ff4757;
+  --secondary: #2f3542;
+  --bg: #f8f9fa;
+  --white: #ffffff;
+  --text: #2f3542;
+  --gray: #747d8c;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+h1 { font-size: 1.5rem; color: var(--primary); }
+
+/* Botones */
+button, .btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+  background-color: #e84118;
+  transform: translateY(-1px);
+}
+
+#logoutButton {
+  background-color: #f1f2f6;
+  color: var(--text);
+  border: 1px solid #ced4da;
+}
+
+#logoutButton:hover { background-color: #dfe4ea; }
+
+/* Tabla Estilizada */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
+}
+
+th {
+  background-color: #f8f9fa;
+  color: var(--gray);
+  text-align: left;
+  padding: 15px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid #edf2f7;
+}
+
+td {
+  padding: 15px;
+  border-bottom: 1px solid #edf2f7;
+  vertical-align: middle;
+}
+
+tr:hover { background-color: #fcfcfc; }
+
+img {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Formulario de Agregar */
+section {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  box-sizing: border-box; /* Importante para el ancho */
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none; /* Quitamos el borde azul feo por defecto */
+  border-color: var(--primary); /* El borde se pone rojo */
+  box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.2); /* Esto crea el efecto de "anillo" suave */
+}
