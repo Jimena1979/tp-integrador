@@ -6,7 +6,7 @@ import type { ICategory } from "@/types/categoria.ts";
 export const categorias: ICategory[] = [
   {
     id: 1,
-    eliminado: false,
+    eliminado:false,
     createdAt: "2024-01-15T10:00:00",
     nombre: "Pizzas",
     descripcion: "Pizzas artesanales con masa fresca",

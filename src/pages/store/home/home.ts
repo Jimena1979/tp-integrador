@@ -1,14 +1,25 @@
 import { verificarAcceso } from "@/main";
 import { logout } from "@/utils/auths";
 import type { IUser } from "@/types/IUser";
-import { PRODUCTS, categorias } from "@/data/data"; 
+import { PRODUCTS, getCategories } from "@/data/data";
 import type { ICategory } from "@/types/categoria";
 import type { Product } from "@/types/product"; 
 import {obtenerCarrito, agregarAlCarrito } from "../cart/cart.ts";
 
 verificarAcceso('client');
 
-// Copia esto en tu home.ts
+const mostrarNombreUsuario = () => {
+    const userData = localStorage.getItem("userData");
+    const liUsuario = document.querySelector(".user-name") as HTMLLIElement | null;
+
+    if (userData && liUsuario) {
+        const user = JSON.parse(userData);
+         liUsuario.textContent = `${user.nombre} ${user.apellido}`; 
+    }
+};
+
+
+// 
 const getEmail = (): string => {
     const userData = localStorage.getItem("userData");
     
@@ -92,12 +103,12 @@ const cargarCategorias = (): void => {
         listaCategorias.appendChild(liTodas);
 
         // 2. Renderizar categorías dinámicamente
-        categorias.forEach((cat: ICategory) => {
+        getCategories().forEach((cat: ICategory) => {
             const li = document.createElement("li");
             li.innerHTML = `<a href="#" class="filtro-cat" data-categoria="${cat.nombre}">${cat.nombre}</a>`; 
             listaCategorias.appendChild(li); 
         });
-
+        
         // 3. Delegación de eventos: Escuchamos el clic en el contenedor (ul)
         listaCategorias.addEventListener("click", (e: Event) => {
             // Buscamos el elemento clickeado
@@ -191,6 +202,7 @@ const initHomePage = () => {
             buscarProductos(target.value);
         });
     }
+    mostrarNombreUsuario();
 actualizarContador();
     cargarCategorias();
     cargarProductos();

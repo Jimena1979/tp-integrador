@@ -4,6 +4,19 @@ import type { IUser } from "@/types/IUser";
 
 const STORAGE_KEY = "carrito_food_store";
 
+const mostrarNombreUsuario = () => {
+    const userData = localStorage.getItem("userData");
+    const liUsuario = document.querySelector(".user-name") as HTMLLIElement | null;
+
+    if (userData && liUsuario) {
+        const user = JSON.parse(userData);
+         liUsuario.textContent = `${user.nombre} ${user.apellido}`; 
+    }
+};
+
+
+
+
 const getEmail = (): string => {
     const userData = localStorage.getItem("userData");
     
@@ -181,6 +194,7 @@ const updateTotals = () => {
 // --- 3. EVENTOS ---
 
 document.addEventListener('DOMContentLoaded', () => {
+    mostrarNombreUsuario()
     renderCart();
     const email=getEmail()
     // Delegación de eventos para botones dinámicos
@@ -197,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (target.classList.contains('btn-delete-item')) {
             eliminarDelCarrito(email, id);
         }
+        mostrarNombreUsuario();
         renderCart();
     });
 
