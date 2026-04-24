@@ -40,8 +40,7 @@ export const actualizarContador = (): void => {
     const spanCount = document.getElementById("cart-count");
     
     if (spanCount) {
-        // Como cantidad ya es un número en tu interfaz, no hace falta el Number() || 1
-        const total = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+         const total = carrito.reduce((acc, item) => acc + item.cantidad, 0);
         spanCount.textContent = total.toString();
     }
 };

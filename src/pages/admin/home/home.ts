@@ -20,8 +20,6 @@ const initAdminPage = () => {
 
     console.log("🛡️ Panel de administración verificado y cargado");
     
-    // Acá llamarías a tus funciones de carga de datos para el Admin
-    // ejemplo: renderizarTablaUsuarios();
 };
 
 // 3. Esperar a que el DOM esté listo
